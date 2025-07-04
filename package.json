@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "author": "piku-afk",
   "description": "RedRemote lets you control YouTube on your computer using your phone",
+  "private": true,
   "packageManager": "pnpm@10.10.0",
   "engines": {
     "node": "22.15.0",

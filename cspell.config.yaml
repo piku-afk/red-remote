@@ -4,7 +4,7 @@ dictionaryDefinitions: []
 dictionaries: []
 words: []
 ignoreWords:
-  - biome
+  - biomejs
   - crxjs
   - piku
   - supabase
