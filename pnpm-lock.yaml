@@ -26,6 +26,15 @@ importers:
       '@red-remote/supabase-client':
         specifier: workspace:*
         version: link:../../packages/supabase-client
+      nanoid:
+        specifier: ^5.1.5
+        version: 5.1.5
+      react:
+        specifier: ^19.1.0
+        version: 19.1.0
+      react-dom:
+        specifier: ^19.1.0
+        version: 19.1.0(react@19.1.0)
     devDependencies:
       '@crxjs/vite-plugin':
         specifier: ^2.0.2
@@ -33,6 +42,15 @@ importers:
       '@types/chrome':
         specifier: ^0.0.329
         version: 0.0.329
+      '@types/react':
+        specifier: ^19.1.8
+        version: 19.1.8
+      '@types/react-dom':
+        specifier: ^19.1.6
+        version: 19.1.6(@types/react@19.1.8)
+      '@vitejs/plugin-react-swc':
+        specifier: ^3.10.2
+        version: 3.10.2(vite@7.0.2(@types/node@24.0.10))
       typescript:
         specifier: ^5.8.3
         version: 5.8.3
@@ -1224,6 +1242,11 @@ packages:
   nanoid@3.3.11:
     resolution: {integrity: sha512-N8SpfPUnUp1bK+PMYW8qSWdl9U+wwNWI4QKxOYDy9JAro3WMX7p2OeVRF9v+347pnakNevPmiHhNmZ2HbFA76w==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
+    hasBin: true
+
+  nanoid@5.1.5:
+    resolution: {integrity: sha512-Ir/+ZpE9fDsNH0hQ3C68uyThDXzYcim2EqcZ8zn8Chtt1iylPT9xXJB0kPCnqzgcEGikO9RxSrh63MsmVCU7Fw==}
+    engines: {node: ^18 || >=20}
     hasBin: true
 
   npm-package-arg@12.0.2:
@@ -2784,6 +2807,8 @@ snapshots:
       thenify-all: 1.6.0
 
   nanoid@3.3.11: {}
+
+  nanoid@5.1.5: {}
 
   npm-package-arg@12.0.2:
     dependencies:

@@ -5,11 +5,17 @@
     "build": "vite build"
   },
   "dependencies": {
-    "@red-remote/supabase-client": "workspace:*"
+    "@red-remote/supabase-client": "workspace:*",
+    "nanoid": "^5.1.5",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
     "@crxjs/vite-plugin": "^2.0.2",
     "@types/chrome": "^0.0.329",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react-swc": "^3.10.2",
     "typescript": "^5.8.3",
     "vite": "^7.0.2"
   }
