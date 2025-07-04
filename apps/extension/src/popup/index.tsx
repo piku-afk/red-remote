@@ -20,9 +20,15 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import './style.css';
+import '@mantine/core/styles.css';
+import { MantineProvider } from '@mantine/core';
+import App from './app';
+import Home from './pages/home';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <h1>Welcome to Red Remote Extension</h1>
+    <MantineProvider>
+      <App />
+    </MantineProvider>
   </StrictMode>
 );
