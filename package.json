@@ -1,0 +1,22 @@
+{
+  "name": "red-remote",
+  "version": "0.0.0",
+  "author": "piku-afk",
+  "description": "RedRemote lets you control YouTube on your computer using your phone",
+  "packageManager": "pnpm@10.10.0",
+  "engines": {
+    "node": "22.15.0",
+    "pnpm": "10.10.0"
+  },
+  "scripts": {
+    "format:check": "biome format ./**/*",
+    "format:write": "biome format --write ./**/*",
+    "sync:all": "syncpack list",
+    "sync:list": "syncpack list-mismatches",
+    "sync:fix": "syncpack fix-mismatches && pnpm install"
+  },
+  "devDependencies": {
+    "biome": "^0.3.3",
+    "syncpack": "^13.0.4"
+  }
+}
