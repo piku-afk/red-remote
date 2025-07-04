@@ -1,0 +1,9 @@
+{
+  "$schema": "https://turborepo.com/schema.json",
+  "globalEnv": [],
+  "tasks": {
+    "dev": { "persistent": true, "cache": false },
+    "dev:web": { "persistent": true, "cache": false },
+    "dev:extension": { "persistent": true, "cache": false }
+  }
+}
