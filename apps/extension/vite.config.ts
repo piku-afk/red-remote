@@ -5,6 +5,7 @@ import manifest from './manifest.config.js';
 
 export default defineConfig({
   plugins: [crx({ manifest })],
+  envPrefix: 'RR_', // Prefix for environment variables
   build: {},
   server: {
     cors: {

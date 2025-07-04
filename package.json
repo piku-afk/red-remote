@@ -11,7 +11,7 @@
   },
   "scripts": {
     "dev:web": "turbo run --filter @red-remote/web dev --parallel",
-    "dev:extension": "turbo run --filter @red-remote/extension dev --parallel",
+    "dev:extension": "dotenvx run -f .env.dev -- turbo run --filter @red-remote/extension dev --parallel",
     "format:check": "biome format ./**/*",
     "format:write": "biome format --write ./**/*",
     "sync:all": "syncpack list",
@@ -19,6 +19,7 @@
     "sync:fix": "syncpack fix-mismatches && pnpm install"
   },
   "devDependencies": {
+    "@dotenvx/dotenvx": "^1.45.2",
     "biome": "^0.3.3",
     "syncpack": "^13.0.4",
     "turbo": "^2.5.4"

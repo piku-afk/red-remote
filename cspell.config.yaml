@@ -6,8 +6,10 @@ words: []
 ignoreWords:
   - biomejs
   - crxjs
+  - dotenvx
   - piku
   - pkgroll
   - supabase
   - syncpack
+  - vite
 import: []
