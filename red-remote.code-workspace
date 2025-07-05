@@ -1,0 +1,7 @@
+{
+  "folders": [
+    { "name": "@red-remote", "path": "." },
+    { "name": "@red-remote/web", "path": "./apps/web" },
+    { "name": "@red-remote/extension", "path": "./apps/extension" }
+  ]
+}
