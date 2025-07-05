@@ -12,4 +12,5 @@ ignoreWords:
   - supabase
   - syncpack
   - vite
+  - youtu.be
 import: []
