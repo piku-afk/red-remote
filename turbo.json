@@ -1,6 +1,6 @@
 {
   "$schema": "https://turborepo.com/schema.json",
-  "globalEnv": ["RR_SUPABASE_URL", "RR_SUPABASE_KEY"],
+  "globalEnv": ["RR_APP_WIDTH", "RR_SUPABASE_URL", "RR_SUPABASE_KEY"],
   "tasks": {
     "dev": { "persistent": true, "cache": false },
     "dev:web": { "persistent": true, "cache": false },
