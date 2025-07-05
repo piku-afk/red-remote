@@ -1,34 +1,16 @@
-// import { supabaseClient } from '@red-remote/supabase-client';
-// import { nanoid } from 'nanoid';
-
-// const channel = supabaseClient.channel('test-channel');
-
-// channel.subscribe().on('broadcast', { event: 'test-event' }, (payload) => {
-//   console.log('Received broadcast:', payload);
-// });
-
-// document.querySelector('button')?.addEventListener('click', () => {
-//   // channel.send({
-//   //   type: 'broadcast',
-//   //   event: 'test-event',
-//   //   payload: { message: 'Hello from the popup!' },
-//   // });
-
-//   console.log(nanoid(10));
-// });
-
+import { MantineProvider } from '@mantine/core';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import './style.css';
+import { RouterProvider } from 'react-router';
+
 import '@mantine/core/styles.css';
-import { MantineProvider } from '@mantine/core';
-import App from './app';
-import Home from './pages/home';
+
+import { router } from './router';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <MantineProvider>
-      <App />
+      <RouterProvider router={router} />
     </MantineProvider>
   </StrictMode>
 );

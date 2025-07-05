@@ -35,9 +35,11 @@ export default function Home() {
         Generate Room Code
       </Button>
 
-      <Text mt={8} size='xs' c='dimmed'>
-        Code: <Code>{roomCode}</Code> will expire if no one joins within 5 minutes.
-      </Text>
+      {roomCode && (
+        <Text mt={8} size='xs' c='dimmed'>
+          Code: <Code>{roomCode}</Code> will expire if no one joins within 5 minutes.
+        </Text>
+      )}
     </Box>
   );
 }
