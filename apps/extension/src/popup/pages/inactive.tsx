@@ -1,7 +1,7 @@
 import { Box, Button, Image, Text, Title } from '@mantine/core';
-import Youtube from '../assets/icons/youtube.svg';
-import RedRemote from '../assets/icons/red-remote.svg';
 import { useState } from 'react';
+
+import Youtube from '../assets/icons/youtube.svg';
 
 export default function Inactive() {
   const [isLoading, setIsLoading] = useState(false);
@@ -13,16 +13,17 @@ export default function Inactive() {
 
   return (
     <Box ta='center'>
-      <Image w={32} h={32} mx='auto' src={RedRemote} alt='RedRemote Logo' />
-      <Title mt={24} mb={8} order={2}>
+      <Title mt={24} order={2} size='h3'>
         Welcome to Red Remote
       </Title>
-      <Text w='100%' size='sm' c='dimmed'>
-        Use your phone as a remote for YouTube on your computer. Just open any YouTube video to get
+
+      <Text w='100%' mt={8} size='sm' c='dimmed'>
+        Use your phone as a remote for YouTube on this device. Just open any YouTube video to get
         started.
       </Text>
 
       <Button
+        fullWidth
         radius='md'
         loading={isLoading}
         mt={24}
