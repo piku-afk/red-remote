@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router';
 
 import { ROUTES } from '../constants/routes';
 import { ROOM_CREATION_STATUS } from '../constants/status';
+import { setInactiveIcon, setPendingIcon } from '../utils/extensionIcon';
 import { generateRoomCode } from '../utils/generateRoomCode';
 import { setRoomCode } from '../utils/roomStorage';
 
@@ -18,25 +19,36 @@ export default function RoomCreation() {
     let channel: ReturnType<typeof supabaseClient.channel> | null = null;
 
     const createRoom = async () => {
-      // Step 1: Generate room code
-      setStatusText(ROOM_CREATION_STATUS.GENERATING_CODE);
-      await new Promise((resolve) => setTimeout(resolve, 800));
-      const roomCode = generateRoomCode();
-      await setRoomCode(roomCode);
-      setProgress(33);
+      try {
+        // Set extension icon to pending state
+        setPendingIcon();
 
-      // Step 2: Create Supabase channel
-      setStatusText(ROOM_CREATION_STATUS.CREATING_CHANNEL);
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      channel = supabaseClient.channel(roomCode);
-      setProgress(66);
+        // Step 1: Generate room code
+        setStatusText(ROOM_CREATION_STATUS.GENERATING_CODE);
+        await new Promise((resolve) => setTimeout(resolve, 800));
+        const roomCode = generateRoomCode();
+        await setRoomCode(roomCode);
+        setProgress(33);
 
-      // Step 3: Complete
-      setStatusText(ROOM_CREATION_STATUS.ROOM_CREATED);
-      await new Promise((resolve) => setTimeout(resolve, 500));
+        // Step 2: Create Supabase channel
+        setStatusText(ROOM_CREATION_STATUS.CREATING_CHANNEL);
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+        channel = supabaseClient.channel(roomCode);
+        setProgress(66);
 
-      // Navigate to room display page
-      navigate(ROUTES.ROOM);
+        // Step 3: Complete
+        setStatusText(ROOM_CREATION_STATUS.ROOM_CREATED);
+        await new Promise((resolve) => setTimeout(resolve, 500));
+
+        // Navigate to room display page
+        navigate(ROUTES.ROOM);
+      } catch (error) {
+        // Reset icon to inactive state on error
+        setInactiveIcon();
+        console.error('Room creation failed:', error);
+        // Navigate back to home or show error state
+        navigate(ROUTES.HOME);
+      }
     };
 
     createRoom();

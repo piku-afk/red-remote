@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 
 import { ROUTES } from '../constants/routes';
+import { setInactiveIcon, setPendingIcon } from '../utils/extensionIcon';
 import { clearRoomCode, getRoomCode } from '../utils/roomStorage';
 
 export default function Room() {
@@ -17,9 +18,12 @@ export default function Room() {
       const code = await getRoomCode();
       if (code) {
         setRoomCode(code);
+        // Set extension icon to pending state when room is active
+        setPendingIcon();
       } else {
-        // If no room code, navigate back to home
-        navigate(ROUTES.HOME);
+        // If no room code, reset icon and navigate back to home
+        setInactiveIcon();
+        navigate(ROUTES.INITIALIZATION);
       }
     };
 
@@ -29,6 +33,8 @@ export default function Room() {
   const handleDisconnect = async () => {
     // Clear room code from storage
     await clearRoomCode();
+    // Set extension icon back to inactive state
+    setInactiveIcon();
     // Navigate back to home
     navigate(ROUTES.HOME);
   };
