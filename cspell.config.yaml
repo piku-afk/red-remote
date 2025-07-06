@@ -11,6 +11,7 @@ ignoreWords:
   - nolookalikes
   - piku
   - pkgroll
+  - qrcode
   - supabase
   - syncpack
   - vite

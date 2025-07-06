@@ -1,6 +1,7 @@
 export enum ROUTES {
   HOME = '/home',
   INACTIVE = '/inactive',
-  TAB_DETECTOR = '/',
+  INITIALIZATION = '/',
   ROOM_CREATION = '/room-creation',
+  ROOM = '/room',
 }

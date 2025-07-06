@@ -6,7 +6,7 @@ import RedRemote from '../assets/icons/red-remote.svg';
 import { ROUTES } from '../constants/routes';
 
 // Routes that should show the large image (128x128)
-const LARGE_IMAGE_ROUTES: string[] = [ROUTES.TAB_DETECTOR, ROUTES.ROOM_CREATION];
+const LARGE_IMAGE_ROUTES: string[] = [ROUTES.INITIALIZATION, ROUTES.ROOM_CREATION];
 
 export default function AppLayout() {
   const location = useLocation();

@@ -2,49 +2,51 @@ import { Box, Progress, Text, Title } from '@mantine/core';
 import { supabaseClient } from '@red-remote/supabase-client';
 import { motion } from 'motion/react';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router';
 
+import { ROUTES } from '../constants/routes';
+import { ROOM_CREATION_STATUS } from '../constants/status';
 import { generateRoomCode } from '../utils/generateRoomCode';
+import { setRoomCode } from '../utils/roomStorage';
 
 export default function RoomCreation() {
   const [progress, setProgress] = useState(0);
-  const [statusText, setStatusText] = useState('Initializing...');
+  const [statusText, setStatusText] = useState(ROOM_CREATION_STATUS.INITIALIZING);
+  const navigate = useNavigate();
 
   useEffect(() => {
     let channel: ReturnType<typeof supabaseClient.channel> | null = null;
 
     const createRoom = async () => {
       // Step 1: Generate room code
-      setStatusText('Generating room code...');
+      setStatusText(ROOM_CREATION_STATUS.GENERATING_CODE);
       await new Promise((resolve) => setTimeout(resolve, 800));
       const roomCode = generateRoomCode();
-      chrome.storage.local.set({ roomCode });
+      await setRoomCode(roomCode);
       setProgress(33);
 
       // Step 2: Create Supabase channel
-      setStatusText('Creating Supabase channel...');
+      setStatusText(ROOM_CREATION_STATUS.CREATING_CHANNEL);
       await new Promise((resolve) => setTimeout(resolve, 1000));
       channel = supabaseClient.channel(roomCode);
       setProgress(66);
 
-      // Step 3: Subscribe to channel
-      setStatusText('Subscribing to channel...');
-      await new Promise((resolve) => setTimeout(resolve, 800));
-      channel.subscribe();
-      setProgress(100);
-
-      // Step 4: Complete
-      setStatusText('Room created successfully!');
+      // Step 3: Complete
+      setStatusText(ROOM_CREATION_STATUS.ROOM_CREATED);
       await new Promise((resolve) => setTimeout(resolve, 500));
+
+      // Navigate to room display page
+      navigate(ROUTES.ROOM);
     };
 
     createRoom();
 
     return () => {
       if (channel) {
-        channel.unsubscribe();
+        supabaseClient.removeChannel(channel);
       }
     };
-  }, []);
+  }, [navigate]);
 
   return (
     <Box
