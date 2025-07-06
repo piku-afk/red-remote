@@ -1,10 +1,11 @@
 import { Box, Loader, Text } from '@mantine/core';
+import { Suspense, useRef } from 'react';
 import { Await, Navigate, useLoaderData, type LoaderFunction } from 'react-router';
-import { isYoutubeTab } from '../utils/isYoutubeTab';
-import { Suspense } from 'react';
-import { ROUTES } from '../constants/routes';
 
-export const tabDetectorLoader: LoaderFunction = () => {
+import { ROUTES } from '../constants/routes';
+import { isYoutubeTab } from '../utils/isYoutubeTab';
+
+export const tabDetectorLoader: LoaderFunction = async () => {
   return { isYoutubeTab: isYoutubeTab() };
 };
 

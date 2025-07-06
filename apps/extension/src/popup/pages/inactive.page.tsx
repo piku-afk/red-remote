@@ -1,4 +1,5 @@
 import { Box, Button, Image, Text, Title } from '@mantine/core';
+import { motion } from 'motion/react';
 import { useState } from 'react';
 
 import Youtube from '../assets/icons/youtube.svg';
@@ -12,7 +13,17 @@ export default function Inactive() {
   };
 
   return (
-    <Box ta='center'>
+    <Box
+      component={motion.div}
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        type: 'spring',
+        stiffness: 300,
+        damping: 30,
+        duration: 0.4,
+      }}
+      ta='center'>
       <Title mt={24} order={2} size='h3'>
         Welcome to Red Remote
       </Title>

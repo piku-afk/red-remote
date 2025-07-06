@@ -1,20 +1,26 @@
-import { Box, Button, Code, Text, Title } from '@mantine/core';
-import { nanoid } from 'nanoid';
-import { useState } from 'react';
+import { Box, Button, Text, Title } from '@mantine/core';
+import { motion } from 'motion/react';
+import { Link, useNavigation } from 'react-router';
+
+import { ROUTES } from '../constants/routes';
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(false);
-  const [roomCode, setRoomCode] = useState<string | null>(null);
-
-  const handleGenerateRoomCode = () => {
-    setIsLoading(true);
-    const roomCode = nanoid(10);
-    setRoomCode(roomCode);
-    setIsLoading(false);
-  };
+  const navigation = useNavigation();
+  const isNavigating = Boolean(navigation.location);
 
   return (
-    <Box ta='center'>
+    <Box
+      component={motion.div}
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 16 }}
+      transition={{
+        type: 'spring',
+        stiffness: 300,
+        damping: 30,
+        duration: 0.4,
+      }}
+      ta='center'>
       <Title mt={24} order={2} size='h3'>
         Ready to Connect
       </Title>
@@ -25,21 +31,16 @@ export default function Home() {
       </Text>
 
       <Button
+        component={Link}
+        to={{ pathname: ROUTES.ROOM_CREATION }}
         mt={24}
         fullWidth
         size='md'
         radius='sm'
         variant='default'
-        loading={isLoading}
-        onClick={handleGenerateRoomCode}>
-        Generate Room Code
+        loading={isNavigating}>
+        Create Room
       </Button>
-
-      {roomCode && (
-        <Text mt={8} size='xs' c='dimmed'>
-          Code: <Code>{roomCode}</Code> will expire if no one joins within 5 minutes.
-        </Text>
-      )}
     </Box>
   );
 }

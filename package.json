@@ -19,8 +19,8 @@
     "sync:fix": "syncpack fix-mismatches && pnpm install"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.0.6",
     "@dotenvx/dotenvx": "^1.45.2",
-    "biome": "^0.3.3",
     "syncpack": "^13.0.4",
     "turbo": "^2.5.4"
   }
