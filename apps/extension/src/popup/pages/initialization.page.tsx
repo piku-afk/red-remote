@@ -5,8 +5,8 @@ import { useNavigate } from 'react-router';
 
 import { ROUTES } from '../constants/routes';
 import { INITIALIZATION_STATUS } from '../constants/status';
-import { isYoutubeTab } from '../utils/isYoutubeTab';
 import { checkRoomCode } from '../utils/roomStorage';
+import { isYoutubeTab } from '../utils/youtubeTab';
 
 export default function Initialization() {
   const [progress, setProgress] = useState(0);

@@ -6,7 +6,7 @@ export default defineManifest({
   manifest_version: 3,
   name: 'Red Remote',
   version: packageJson.version,
-  permissions: ['activeTab', 'storage'],
+  permissions: ['storage', 'tabs'],
   icons: {
     32: 'public/icons/inactive-icon-32.png',
   },
