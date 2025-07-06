@@ -39,7 +39,7 @@ export default function Room() {
     navigate(ROUTES.HOME);
   };
 
-  const googleUrl = `https://google.com/${roomCode}`;
+  const webUrl = `${import.meta.env.RR_WEB_URL}/${roomCode}`;
 
   if (!roomCode) {
     return null; // Will navigate away in useEffect
@@ -93,7 +93,7 @@ export default function Room() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.2 }}>
           <Text size='sm' c='dimmed' mb='xs'>
-            Scan to join: google.com/{roomCode}
+            Scan to join: {webUrl}
           </Text>
           <Box
             style={{
@@ -103,7 +103,7 @@ export default function Room() {
               borderRadius: '8px',
               border: '1px solid #e9ecef',
             }}>
-            <QRCodeSVG value={googleUrl} size={120} bgColor='#ffffff' fgColor='#000000' level='M' />
+            <QRCodeSVG value={webUrl} size={120} bgColor='#ffffff' fgColor='#000000' level='M' />
           </Box>
         </Box>
 

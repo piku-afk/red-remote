@@ -8,6 +8,7 @@ interface ViteTypeOptions {
 
 interface ImportMetaEnv {
   readonly RR_APP_WIDTH: string;
+  readonly RR_WEB_URL: string;
   readonly RR_SUPABASE_URL: string;
   readonly RR_SUPABASE_KEY: string;
 }
