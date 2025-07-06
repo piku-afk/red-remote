@@ -15,13 +15,14 @@ export default function Initialization() {
 
   useEffect(() => {
     const initialize = async () => {
-      // Step 1: Check for existing room code
+      // Step 1: Check for existing room code and current tab
       setStatusText(INITIALIZATION_STATUS.CHECKING_ROOM);
       await new Promise((resolve) => setTimeout(resolve, 300));
-      const hasRoom = await checkRoomCode();
+      const [hasRoom, isYoutube] = await Promise.all([checkRoomCode(), isYoutubeTab()]);
       setProgress(50);
 
-      if (hasRoom) {
+      // If room exists AND we're on YouTube, go to room page
+      if (hasRoom && isYoutube) {
         setStatusText(INITIALIZATION_STATUS.LOADING_ROOM);
         await new Promise((resolve) => setTimeout(resolve, 200));
         setProgress(100);
@@ -29,17 +30,18 @@ export default function Initialization() {
         return;
       }
 
-      // Step 2: Check YouTube tab
+      // Step 2: Handle other cases
       setStatusText(INITIALIZATION_STATUS.DETECTING_TAB);
       await new Promise((resolve) => setTimeout(resolve, 300));
-      const isYoutube = await isYoutubeTab();
       setProgress(100);
 
       if (isYoutube) {
+        // On YouTube but no room - go to home to create room
         setStatusText(INITIALIZATION_STATUS.YOUTUBE_DETECTED);
         await new Promise((resolve) => setTimeout(resolve, 200));
         navigate(ROUTES.HOME, { replace: true });
       } else {
+        // Not on YouTube - go to inactive (regardless of room existence)
         setStatusText(INITIALIZATION_STATUS.TAB_NOT_SUPPORTED);
         await new Promise((resolve) => setTimeout(resolve, 200));
         navigate(ROUTES.INACTIVE, { replace: true });
