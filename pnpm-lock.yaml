@@ -84,15 +84,27 @@ importers:
 
   apps/web:
     dependencies:
+      '@mantine/core':
+        specifier: ^8.1.2
+        version: 8.1.2(@mantine/hooks@8.1.2(react@19.1.0))(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@mantine/hooks':
+        specifier: ^8.1.2
+        version: 8.1.2(react@19.1.0)
       '@red-remote/supabase-client':
         specifier: workspace:*
         version: link:../../packages/supabase-client
+      motion:
+        specifier: ^12.23.0
+        version: 12.23.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       react:
         specifier: ^19.1.0
         version: 19.1.0
       react-dom:
         specifier: ^19.1.0
         version: 19.1.0(react@19.1.0)
+      react-router:
+        specifier: ^7.6.3
+        version: 7.6.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
     devDependencies:
       '@types/react':
         specifier: ^19.1.8

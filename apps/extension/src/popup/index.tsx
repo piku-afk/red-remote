@@ -8,7 +8,7 @@ import '@mantine/core/styles.css';
 
 import { router } from './router';
 
-createRoot(document.getElementById('root')!).render(
+createRoot(document.getElementById('root') as HTMLDivElement).render(
   <StrictMode>
     <MantineProvider>
       <AnimatePresence mode='wait'>
