@@ -29,9 +29,6 @@ importers:
       '@red-remote/core':
         specifier: workspace:*
         version: link:../../packages/core
-      '@red-remote/supabase-client':
-        specifier: workspace:*
-        version: link:../../packages/supabase-client
       motion:
         specifier: ^12.23.0
         version: 12.23.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -93,9 +90,9 @@ importers:
       '@mantine/hooks':
         specifier: ^8.1.2
         version: 8.1.2(react@19.1.0)
-      '@red-remote/supabase-client':
+      '@red-remote/core':
         specifier: workspace:*
-        version: link:../../packages/supabase-client
+        version: link:../../packages/core
       motion:
         specifier: ^12.23.0
         version: 12.23.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
