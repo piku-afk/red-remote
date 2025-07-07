@@ -1,5 +1,5 @@
 {
-  "name": "@red-remote/supabase-client",
+  "name": "@red-remote/browser-fingerprint",
   "version": "1.0.0",
   "type": "module",
   "module": "dist/index.js",
@@ -8,7 +8,7 @@
     "build": "pkgroll"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.50.3"
+    "@fingerprintjs/fingerprintjs": "^4.6.2"
   },
   "devDependencies": {
     "pkgroll": "^2.13.1",

@@ -8,6 +8,7 @@ ignoreWords:
   - crxjs
   - defg
   - dotenvx
+  - fingerprintjs
   - nolookalikes
   - piku
   - pkgroll
