@@ -10,6 +10,7 @@
     "pnpm": "10.10.0"
   },
   "scripts": {
+    "build:core": "dotenvx run -f .env.dev -- turbo run --filter @red-remote/core build",
     "dev:web": "dotenvx run -f .env.dev -- turbo run --filter @red-remote/web dev --parallel",
     "dev:extension": "dotenvx run -f .env.dev -- turbo run --filter @red-remote/extension dev --parallel",
     "format:check": "biome format ./**/*",

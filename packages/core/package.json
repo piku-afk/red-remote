@@ -1,7 +1,22 @@
 {
   "name": "@red-remote/core",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "private": true,
   "type": "module",
-  "scripts": {}
+  "exports": {
+    "./client": {
+      "import": "./dist/client/index.js",
+      "types": "./dist/client/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "pkgroll"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.50.3"
+  },
+  "devDependencies": {
+    "pkgroll": "^2.13.1",
+    "typescript": "^5.8.3"
+  }
 }

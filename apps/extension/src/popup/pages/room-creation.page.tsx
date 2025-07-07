@@ -1,5 +1,5 @@
 import { Box, Progress, Text, Title } from '@mantine/core';
-import { supabaseClient } from '@red-remote/supabase-client';
+import { supabaseClient } from '@red-remote/core/client';
 import { motion } from 'motion/react';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';

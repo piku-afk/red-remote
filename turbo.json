@@ -2,6 +2,7 @@
   "$schema": "https://turborepo.com/schema.json",
   "globalEnv": ["RR_APP_WIDTH", "RR_WEB_URL", "RR_SUPABASE_URL", "RR_SUPABASE_KEY"],
   "tasks": {
+    "build": { "outputs": ["./packages/core/dist"] },
     "dev": { "persistent": true, "cache": false },
     "dev:web": { "persistent": true, "cache": false },
     "dev:extension": { "persistent": true, "cache": false }
