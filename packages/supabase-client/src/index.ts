@@ -10,6 +10,6 @@ declare global {
 }
 
 export const supabaseClient = createClient(
-  import.meta.env.RR_SUPABASE_URL!,
-  import.meta.env.RR_SUPABASE_KEY!
+  import.meta.env.RR_SUPABASE_URL,
+  import.meta.env.RR_SUPABASE_KEY
 );
