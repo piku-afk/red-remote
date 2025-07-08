@@ -11,6 +11,10 @@
     "./fingerprint": {
       "import": "./dist/fingerprint/index.js",
       "types": "./dist/fingerprint/index.d.ts"
+    },
+    "./services": {
+      "import": "./dist/services/index.js",
+      "types": "./dist/services/index.d.ts"
     }
   },
   "scripts": {

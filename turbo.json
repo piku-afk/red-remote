@@ -8,7 +8,8 @@
     "RR_WEB_URL"
   ],
   "tasks": {
-    "build": { "outputs": ["./packages/core/dist"] },
+    "build": {},
+    "build:core": { "outputs": ["./packages/core/dist"] },
     "dev": { "persistent": true, "cache": false },
     "dev:web": { "persistent": true, "cache": false },
     "dev:extension": { "persistent": true, "cache": false },
