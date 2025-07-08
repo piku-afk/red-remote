@@ -7,12 +7,17 @@
     "./client": {
       "import": "./dist/client/index.js",
       "types": "./dist/client/index.d.ts"
+    },
+    "./fingerprint": {
+      "import": "./dist/fingerprint/index.js",
+      "types": "./dist/fingerprint/index.d.ts"
     }
   },
   "scripts": {
     "build": "pkgroll"
   },
   "dependencies": {
+    "@fingerprintjs/fingerprintjs": "^4.6.2",
     "@supabase/supabase-js": "^2.50.3"
   },
   "devDependencies": {
