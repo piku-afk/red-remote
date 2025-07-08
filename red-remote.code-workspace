@@ -4,6 +4,7 @@
     { "name": "@red-remote/web", "path": "./apps/web" },
     { "name": "@red-remote/extension", "path": "./apps/extension" },
     { "name": "@red-remote/core", "path": "./packages/core" },
+    { "name": "red-remote/database", "path": "./database" },
     { "name": "@red-remote/browser-fingerprint", "path": "./packages/browser-fingerprint" }
   ]
 }

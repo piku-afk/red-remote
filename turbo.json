@@ -1,10 +1,20 @@
 {
   "$schema": "https://turborepo.com/schema.json",
-  "globalEnv": ["RR_APP_WIDTH", "RR_WEB_URL", "RR_SUPABASE_URL", "RR_SUPABASE_KEY"],
+  "globalEnv": [
+    "RR_APP_WIDTH",
+    "RR_DATABASE_URL",
+    "RR_SUPABASE_URL",
+    "RR_SUPABASE_KEY",
+    "RR_WEB_URL"
+  ],
   "tasks": {
     "build": { "outputs": ["./packages/core/dist"] },
     "dev": { "persistent": true, "cache": false },
     "dev:web": { "persistent": true, "cache": false },
-    "dev:extension": { "persistent": true, "cache": false }
+    "dev:extension": { "persistent": true, "cache": false },
+    "migrate:up": { "cache": false },
+    "migrate:down": { "cache": false },
+    "migrate:latest": { "cache": false },
+    "migrate:list": { "cache": false }
   }
 }

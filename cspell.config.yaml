@@ -9,12 +9,14 @@ ignoreWords:
   - defg
   - dotenvx
   - fingerprintjs
+  - kysely
   - nolookalikes
   - piku
   - pkgroll
   - qrcode
   - supabase
   - syncpack
+  - timestamptz
   - vite
   - youtu.be
 import: []

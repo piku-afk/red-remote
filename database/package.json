@@ -1,0 +1,20 @@
+{
+  "name": "@red-remote/database",
+  "scripts": {
+    "migrate:latest": "kysely migrate:latest",
+    "migrate:up": "kysely migrate:up",
+    "migrate:down": "kysely migrate:down",
+    "migrate:list": "kysely migrate:list"
+  },
+  "dependencies": {
+    "@types/node": "^24.0.10",
+    "@types/pg": "^8.15.4",
+    "kysely": "^0.28.2",
+    "kysely-ctl": "^0.13.1",
+    "kysely-postgres-js": "^2.0.0",
+    "pg": "^8.16.3",
+    "postgres": "^3.4.7",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3"
+  }
+}
